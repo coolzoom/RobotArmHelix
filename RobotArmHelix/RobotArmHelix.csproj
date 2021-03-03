@@ -102,7 +102,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="3D_Models\aggramar.obj" />
     <None Include="3D_Models\test.stl" />
     <None Include="3D_Models\IRB4600_20kg-250_BASE_CAD_rev04.stl" />
     <None Include="3D_Models\IRB4600_20kg-250_CABLES_LINK1_rev03.stl" />

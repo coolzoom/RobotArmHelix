@@ -44,30 +44,43 @@ namespace RobotArmHelix
             /** Debug sphere to check in which point the joint is rotating**/
             var builder = new MeshBuilder(true, true);
             var position = new Point3D(0, 0, 0);
-            builder.AddSphere(position, 50, 15, 15);
+            builder.AddSphere(position, 5, 15, 15);
             visualGrid = new GeometryModel3D(builder.ToMesh(), Materials.Brown);
             mvGrid = new ModelVisual3D();
             mvGrid.Content = visualGrid;
 
             //add board
             ModelImporter import = new ModelImporter();
-            var link = import.Load(basePath + modeltest);
+            var link = import.Load(basePath + MODEL_PATH21);
             mvBoard = new ModelVisual3D();
             mvBoard.Content = link;
             mvBoard.Transform = new TranslateTransform3D(basePoint);
+
+            var materialGroup = new MaterialGroup();
+            Color mainColor = Colors.White;
+            EmissiveMaterial emissMat = new EmissiveMaterial(new SolidColorBrush(mainColor));
+            DiffuseMaterial diffMat = new DiffuseMaterial(new SolidColorBrush(mainColor));
+            SpecularMaterial specMat = new SpecularMaterial(new SolidColorBrush(mainColor), 200);
+            materialGroup.Children.Add(emissMat);
+            materialGroup.Children.Add(diffMat);
+            materialGroup.Children.Add(specMat);
+
+            GeometryModel3D model = link.Children[0] as GeometryModel3D;
+            model.Material = materialGroup;
+            model.BackMaterial = materialGroup;
 
             //
             viewPort3d.RotateGesture = new MouseGesture(MouseAction.RightClick);
             viewPort3d.PanGesture = new MouseGesture(MouseAction.LeftClick);
             viewPort3d.Children.Add(mvGrid);
-
+ 
             viewPort3d.Children.Add(mvBoard);
 
 
 
-            viewPort3d.Camera.LookDirection = new Vector3D(2038, -5200, -2930);
+            viewPort3d.Camera.LookDirection = new Vector3D(20, -52, -29);
             viewPort3d.Camera.UpDirection = new Vector3D(-0.145, 0.372, 0.917);
-            viewPort3d.Camera.Position = new Point3D(-1571, 4801, 3774);
+            viewPort3d.Camera.Position = new Point3D(-15, 48, 37);
         }
 
         private void ViewPort3D_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -107,11 +120,6 @@ namespace RobotArmHelix
         private void unselectModel()
         {
             changeModelColor(oldSelectedModel, oldColor);
-        }
-        private Color changeModelColor(Joint pJoint, Color newColor)
-        {
-            Model3DGroup models = ((Model3DGroup)pJoint.model);
-            return changeModelColor(models.Children[0] as GeometryModel3D, newColor);
         }
 
         private Color changeModelColor(GeometryModel3D pModel, Color newColor)
