@@ -102,6 +102,7 @@ namespace RobotArmHelix
         private const string MODEL_PATH18 = "IRB6700-MH3_245-300_IRC5_rev00_LOGO3_CAD.stl";
         private const string MODEL_PATH19 = "IRB6700-MH3_245-300_IRC5_rev01_BASE_CAD.stl";
         private const string MODEL_PATH20 = "IRB6700-MH3_245-300_IRC5_rev00_CYLINDER_CAD.stl";
+        private const string MODEL_PATH21 = "HDMT-HDMT_Interface.stl";
 #else
 
         private const string MODEL_PATH1 = "IRB4600_20kg-250_LINK1_CAD_rev04.stl";
@@ -155,10 +156,22 @@ namespace RobotArmHelix
             visual = new ModelVisual3D();
             visual.Content = geom;
 
+            //add board
+            ModelImporter import = new ModelImporter();
+            var link = import.Load(basePath + "IRB4600_20kg-250_BASE_CAD_rev04.stl");
+            ModelVisual3D mvBoard = new ModelVisual3D();
+            mvBoard.Content = link;
+            mvBoard.Transform = new TranslateTransform3D(reachingPoint);
+
+            //
             viewPort3d.RotateGesture = new MouseGesture(MouseAction.RightClick);
             viewPort3d.PanGesture = new MouseGesture(MouseAction.LeftClick);
             viewPort3d.Children.Add(visual);
             viewPort3d.Children.Add(RoboticArm);
+            viewPort3d.Children.Add(mvBoard);
+
+
+
             viewPort3d.Camera.LookDirection = new Vector3D(2038, -5200, -2930);
             viewPort3d.Camera.UpDirection = new Vector3D(-0.145, 0.372, 0.917);
             viewPort3d.Camera.Position = new Point3D(-1571, 4801, 3774);
@@ -393,6 +406,7 @@ namespace RobotArmHelix
             {
                 reachingPoint = new Vector3D(Double.Parse(TbX.Text), Double.Parse(TbY.Text), Double.Parse(TbZ.Text));
                 geom.Transform = new TranslateTransform3D(reachingPoint);
+                
             }
             catch (Exception exc)
             {

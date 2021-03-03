@@ -16,7 +16,6 @@ D:\Software\VS_Workspace\RobotArm\RobotArmHelix\RobotArmHelix\bin\Debug\HelixToo
 D:\Software\VS_Workspace\RobotArm\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.exe
 D:\Software\VS_Workspace\RobotArm\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.pdb
 D:\Software\VS_Workspace\RobotArm\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix_Content.g.cs
-F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.csprojAssemblyReference.cache
 F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\App.g.cs
 F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix_MarkupCompile.cache
 F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\bin\Debug\RobotArmHelix.exe.config
@@ -35,3 +34,7 @@ F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.csproj.C
 F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.csproj.CopyComplete
 F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.exe
 F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.pdb
+F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix.csprojAssemblyReference.cache
+F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\Window1.g.cs
+F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\RobotArmHelix_MarkupCompile.lref
+F:\WOWServer\Source\RobotArmHelix\RobotArmHelix\obj\Debug\Window1.baml
